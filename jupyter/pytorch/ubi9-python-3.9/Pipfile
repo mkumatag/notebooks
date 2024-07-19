@@ -20,6 +20,10 @@ name = "localpi"
 tensorboard = "~=2.16.2"
 torch = {version = "2.2.1a0", index = "localpi"}
 torchvision = {version = "0.17.*", index = "localpi"}
+ray = {version = "2.7.0.*", index="localpi"}
+py-spy = {version = "0.3.14.*", index="localpi"}
+pyarrow = {version = "15.0.1.dev0+g5ce6ff434.d20240426", index="localpi"}
+
 # Datascience and useful extensions
 boto3 = "~=1.34.50"
 kafka-python = "~=2.0.2"
@@ -31,6 +35,7 @@ scikit-learn = "~=1.4.0"
 scipy = "~=1.12.0"
 skl2onnx = "~=1.16.0"
 onnxconverter-common = "~=1.13.0" # Required for skl2onnx, as upgraded version is not compatible with protobuf
+codeflare-sdk = "~=0.16.0"
 
 # DB connectors
 pymongo = "~=4.6.2"

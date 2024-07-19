@@ -178,6 +178,11 @@ cuda-jupyter-datascience-ubi9-python-3.9: cuda-jupyter-minimal-ubi9-python-3.9
 cuda-jupyter-tensorflow-ubi9-python-3.9: cuda-jupyter-datascience-ubi9-python-3.9
 	$(call image,$@,jupyter/tensorflow/ubi9-python-3.9,$<)
 
+# Build and push cuda-jupyter-pytorch-ubi9-python-3.9 image to the registry
+.PHONY: cuda-jupyter-pytorch-ubi9-python-3.9
+cuda-jupyter-pytorch-ubi9-python-3.9: cuda-jupyter-datascience-ubi9-python-3.9
+	$(call image,$@,jupyter/pytorch/ubi9-python-3.9,$<)
+
 # Build and push jupyter-pytorch-ubi9-python-3.9 image to the registry
 .PHONY: jupyter-pytorch-ubi9-python-3.9
 jupyter-pytorch-ubi9-python-3.9: jupyter-datascience-ubi9-python-3.9
