@@ -23,7 +23,8 @@ COPY constraints.txt /etc/constraints.txt
 
 USER root
 RUN if [ "$(uname -m)" = "ppc64le" ]; then \
-        dnf install -y unixODBC-devel python3-devel openblas* openssl-devel && dnf clean all \
+        dnf install -y unixODBC-devel python3-devel openblas* openssl-devel && \
+        dnf clean all; \
     fi
 USER 1001
 
