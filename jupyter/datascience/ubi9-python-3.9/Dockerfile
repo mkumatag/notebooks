@@ -22,8 +22,9 @@ COPY centos-crb.repo /etc/yum.repos.d/centos-crb.repo
 COPY constraints.txt /etc/constraints.txt
 
 USER root
-RUN dnf install -y unixODBC-devel python3-devel openblas* openssl-devel && dnf clean all
-
+RUN if [ "$(uname -m)" = "ppc64le" ]; then \
+        dnf install -y unixODBC-devel python3-devel openblas* openssl-devel && dnf clean all \
+    fi
 USER 1001
 
 RUN echo "Installing softwares and packages" && \
